@@ -6,6 +6,7 @@ let playerScore = 0
 let computerScore = 0
 
 
+
 function round() {
 
     //This randomizes the computers choice//
@@ -47,11 +48,23 @@ const comChoice = (choices[getComputerChoice]);
             document.getElementById("result").innerHTML = "Not a Valid Choice";
         }
 
-      // playerScore = (playerScore).toString;
-       //computerScore = (computerScore).toString;
+      
 
         document.getElementById("pScore").innerHTML = "Player Score " + playerScore;
         document.getElementById("cScore").innerHTML = "Computer Score " + computerScore;
-    
+
+        
+        if (parseInt(playerScore) >= 5) {
+            confirm("You are the champion! Will you face the next challenger?");
+            window.location.reload();
+        }
+        
+        if (parseInt(computerScore) >= 5) {
+            confirm("You are Defeated! Care to try again?");
+            window.location.reload();
+        }
+   
 }
+
+
 
